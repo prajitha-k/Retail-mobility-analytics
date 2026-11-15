@@ -18,12 +18,12 @@ CATCHMENT_RADIUS_M = 500          # catchment area around each store
 # ---- Home and work zones: (id, name, centre_lat, centre_lon, radius_m) ----
 HOME_ZONES = {
     "H1": ("South Residential", 12.9500, 77.5946, 500),
-    "H2": ("East Residential",  12.9690, 77.6350, 500),
+    "H2": ("East Residential",  12.9690, 77.6350, 200),   # small zone: west commuters reliably pass S1 but not S2
     "H3": ("South-East Residential", 12.9400, 77.6250, 500),
 }
 WORK_ZONES = {
     "W1": ("North Business District", 12.9950, 77.5946, 400),
-    "W2": ("West Offices",            12.9690, 77.5600, 400),
+    "W2": ("West Offices",            12.9690, 77.5600, 150),
     "W3": ("Tech Park Campus",        12.9900, 77.6300, 400),
 }
 
