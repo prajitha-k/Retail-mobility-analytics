@@ -1,8 +1,9 @@
 """GeoPulse simulation design (Day 2). Every later script imports these settings.
 All data is simulated. Coordinates describe a fictional retail area in a city-sized box."""
 
-# ---- City box (about 6.7 km north-south, 8.6 km east-west) ----
-CITY_BOX = {"lat_min": 12.935, "lat_max": 13.005, "lon_min": 77.550, "lon_max": 77.645}
+# ---- City box (about 9 km north-south, 11 km east-west) ----
+# Day 5: widened by 0.005 degrees on every side, because GPS error pushed one ping just outside the first box.
+CITY_BOX = {"lat_min": 12.930, "lat_max": 13.010, "lon_min": 77.545, "lon_max": 77.650}
 
 # ---- Stores: (id, name, latitude, longitude, status) ----
 STORES = [
