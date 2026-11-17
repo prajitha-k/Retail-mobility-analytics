@@ -79,7 +79,7 @@ for day in range(args.days):
         # GPS noise
         lat = lat + rng.normal(0, GPS_NOISE_M, lat.shape) / M_LAT
         lon = lon + rng.normal(0, GPS_NOISE_M, lon.shape) / M_LON
-        ts = start + pd.to_timedelta(day, unit="D") + pd.to_timedelta((h * 3600).round().astype(int).ravel(), unit="s")
+        ts = start + pd.to_timedelta(day, unit="D") + pd.to_timedelta(np.floor(h * 3600).astype(int).ravel(), unit="s")
         chunk = pd.DataFrame({"DeviceID": np.repeat(d.DeviceID.to_numpy(), slots), "Latitude": lat.ravel().round(6),
                               "Longitude": lon.ravel().round(6), "Timestamp": ts})
         chunk.to_csv(out_path, mode="a", header=not os.path.exists(out_path), index=False, date_format="%Y-%m-%d %H:%M:%S")
